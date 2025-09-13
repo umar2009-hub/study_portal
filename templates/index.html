@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CollegeConnect — Study Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <div id="page-wrap">
+
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="logo">📚 <span>CollegeConnect</span></div>
+        <p class="subtitle">Interactive study hub — pick a subject and explore materials</p>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <section class="subjects-grid" aria-hidden="false">
+        {% for subject, files in materials.items() %}
+          <button class="subject-card" data-subject="{{ subject }}">
+            <span class="subject-orb" aria-hidden="true"></span>
+            <div class="subject-body">
+              <div class="subject-name">{{ subject }}</div>
+              <div class="subject-count">{{ files|length }} items</div>
+            </div>
+          </button>
+        {% endfor %}
+      </section>
+
+      <!-- Waterfall area (hidden until subject clicked) -->
+      <section id="waterfall" class="waterfall" aria-hidden="true">
+        <div class="waterfall-inner">
+          <button id="close-waterfall" class="close-btn" aria-label="Close">✕</button>
+          <h3 id="waterfall-title">Subject</h3>
+          <ul id="file-list" class="file-list"></ul>
+        </div>
+      </section>
+    </main>
+
+        <footer class="site-footer">
+        <p>© {{ now().year }} All rights reserved | Made by <span class="highlight">Umar Abdullah</span></p>
+    </footer>
+</body>
+
+
+  </div>
+
+  <!-- Inline data: render materials as JSON for JS to read -->
+  <script id="materials-data" type="application/json">
+    {{ materials | tojson }}
+  </script>
+</body>
+</html>
