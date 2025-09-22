@@ -25,16 +25,16 @@ Server → Gunicorn (for deployment on Render)
 
 **▶️ How to Run Locally**
 1. Clone this repo:
-     gh repo clone umar2009-hub/study_portal
-     cd study_portal
+     1. gh repo clone umar2009-hub/study_portal
+     2. cd study_portal
 2. Create a virtual environment (optional but recommended):
-     python -m venv venv
-     source venv/bin/activate   # For Mac/Linux
-     venv\Scripts\activate      # For Windows
+     1. python -m venv venv
+     2. source venv/bin/activate   # For Mac/Linux
+     3. venv\Scripts\activate      # For Windows
 3. Install dependencies:
-     pip install -r requirements.txt
+   -> pip install -r requirements.txt
 4. Run the Flask app:
-      python app.py
+      -> python app.py
 5. open the url
 
 **🎓 Use Case**
