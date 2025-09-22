@@ -25,7 +25,7 @@ Server → Gunicorn (for deployment on Render)
 
 **▶️ How to Run Locally**
 1. Clone this repo:
-     git clone https://github.com/<your-username>/study_portal.git
+     gh repo clone umar2009-hub/study_portal
      cd study_portal
 2. Create a virtual environment (optional but recommended):
      python -m venv venv
